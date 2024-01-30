@@ -54,7 +54,7 @@ namespace IMCyFCN.ViewModel
         #endregion
         #region COMANDOS
         public ICommand ProcesoAsyncomand => new Command(async () => await ProcesoAsyncrono());
-        public ICommand ProcesoSimpcomand => new Command(Opcion);
+        public ICommand ProcesoSimpcomand => new Command(CalcularFCN);
         #endregion
     }
 }
