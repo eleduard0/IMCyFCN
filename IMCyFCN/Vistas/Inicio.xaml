@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IMCyFCN.Vistas.Inicio"
+             BackgroundColor="White">
+    <StackLayout>
+        <Frame BackgroundColor="#5f765f">
+            <Label Text="Calcular IMC y FCN" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="24"/>
+        </Frame>
+        <Label Text="Puedes seleccionar entre calcular tu índice de Masa Corporal (IMC) y tu Frecuencia Cardíaca Normal (FCN)" TextColor="#5f765f"
+               HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        <StackLayout Margin="20,0,0,0">
+            <Label Text="Opciones" TextColor="#5f765f" FontAttributes="Bold" FontSize="24"/>
+            <Grid HorizontalOptions="Center">
+                <RadioButton GroupName="opcion" Content="IMC" Grid.Column="0" Grid.Row="0" TextColor="#5f765f" IsChecked="{Binding IMC}"/>
+                <RadioButton GroupName="opcion" Content="FCN" Grid.Column="1" Grid.Row="0" TextColor="#5f765f" IsChecked="{Binding FCN}"/>
+            </Grid>
+            <Label Text="Proporcionar datos" TextColor="#5f765f" FontAttributes="Bold" FontSize="24"/>
+        </StackLayout>
+        <Label Text="Cuenta tus latidos por 15 segundos" TextColor="#5f765f" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+        <Entry Placeholder="Latidos" PlaceholderColor="LightGray" HorizontalOptions="CenterAndExpand" WidthRequest="200" Keyboard="Numeric" Text="{Binding Latidos}"/>
+        <Button Text="Calcular" CornerRadius="15" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#5f765f" />
+    </StackLayout>
+</ContentPage>
