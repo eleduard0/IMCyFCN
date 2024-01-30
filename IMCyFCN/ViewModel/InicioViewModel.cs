@@ -13,7 +13,7 @@ namespace IMCyFCN.ViewModel
         string _Texto;
         public bool _imc;
         public bool _fcn;
-        public string _latidos
+        public string _latidos;
 
         #endregion
         #region CONSTRUCTOR
