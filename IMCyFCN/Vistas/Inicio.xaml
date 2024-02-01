@@ -17,8 +17,28 @@
             </Grid>
             <Label Text="Proporcionar datos" TextColor="#5f765f" FontAttributes="Bold" FontSize="24"/>
         </StackLayout>
-        <Label Text="Cuenta tus latidos por 15 segundos" TextColor="#5f765f" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-        <Entry Placeholder="Latidos" PlaceholderColor="LightGray" HorizontalOptions="CenterAndExpand" WidthRequest="200" Keyboard="Numeric" Text="{Binding Latidos}"/>
-        <Button Text="Calcular" CornerRadius="15" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#5f765f" />
+        <Label Text="Cuenta tus latidos por 15 segundos" TextColor="#5f765f" HorizontalOptions="Center" HorizontalTextAlignment="Center" IsVisible="{Binding FCN}"/>
+        <Entry Placeholder="Latidos" PlaceholderColor="LightGray" HorizontalOptions="CenterAndExpand" WidthRequest="200" Keyboard="Numeric" Text="{Binding Latidos}" IsVisible="{Binding FCN}" TextColor="Black"/>
+
+        <Entry Placeholder="Altura (m)" PlaceholderColor="LightGray" HorizontalOptions="CenterAndExpand" WidthRequest="200" Keyboard="Numeric" Text="{Binding Altura}" IsVisible="{Binding IMC}" TextColor="Black"/>
+        <Entry Placeholder="Peso (kg)" PlaceholderColor="LightGray" HorizontalOptions="CenterAndExpand" WidthRequest="200" Keyboard="Numeric" Text="{Binding Peso}" IsVisible="{Binding IMC}" TextColor="Black"/>
+        <Button Text="Calcular" CornerRadius="15" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#5f765f" Command="{Binding Calcularcomand}"/>
+
+        <Label Text="{Binding Resultado}" TextColor="#5f765f" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18"/>
+        <Image Source="comprobar.png" IsVisible="false" HeightRequest="50" WidthRequest="50">
+            <Image.Triggers>
+                <DataTrigger TargetType="Image" Binding="{Binding Comprobar}" Value="true">
+                    <Setter Property="IsVisible" Value="true"/>
+                </DataTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image Source="crisis.png" IsVisible="false" HeightRequest="50" WidthRequest="50">
+            <Image.Triggers>
+                <DataTrigger TargetType="Image" Binding="{Binding Crisis}" Value="true" >
+                    <Setter Property="IsVisible" Value="true"/>
+                </DataTrigger>
+            </Image.Triggers>
+        </Image> 
+        
     </StackLayout>
 </ContentPage>
